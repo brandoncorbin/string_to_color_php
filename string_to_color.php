@@ -1,4 +1,11 @@
 <?php
+/**
+ * String To Color
+ * Author: Brandon Corbin
+ * Additional code from : clearpixel.com.au
+ * code [@] icorbin.com
+ * http://icorbin.com
+ */
 
 /**
  * string_to_color("My string")
