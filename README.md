@@ -1,4 +1,4 @@
-string_to_color_php
+String to Color PHP
 ===================
 
-Consistently generate a nice looking hex color for a specific string in PHP
+This is still very new - a functional port of the Javascript version of String to Color http://github.com/brandoncorbin/string_to_color in PHP.
