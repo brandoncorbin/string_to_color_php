@@ -8,5 +8,5 @@ A functional port of the Javascript version of String to Color http://github.com
 
 ##Usage
 
-    require('string_to_color.php');<br />
+    require('string_to_color.php');
     echo '#'.string_to_color("This is my string");
