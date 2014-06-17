@@ -1,22 +1,37 @@
 <?php
 
+/**
+ * string_to_color("My string")
+ * main function for generating a color from a string
+ */
 function string_to_color( $string ) {
-	return stc_shade( str_int_to_color( stc_hash( $string ) ), 1 );
+	return stc_shade( stc_int_to_color( stc_hash( $string ) ), 1 );
 }
 
-
-
+/**
+ * stc_hash("This is my string")
+ * generates an hashed int from a string
+ */
 function stc_hash( $word ) {
 	return hexdec( substr( sha1( $word ), 0, 15 ) );
 }
 
-function str_int_to_color( $int ) {
-	return "#".substr( "000000".dechex( $int ), -6 );
+/**
+ * str_int_to_color(123456)
+ * Generates a hex based dechex of a int.
+ */
+function stc_int_to_color( $int ) {
+	return substr( "000000".dechex( $int ), -6 );
 }
 
-// from http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
+/** 
+* stc_shade('#d34d3d', .4)
+* shades a color so it's not so obsence
+* function based on http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
+*/
+
 function stc_shade( $hex, $percent ) {
-	// Work out if hash given
+	
 	$hash = '';
 	if ( stristr( $hex, '#' ) ) {
 		$hex = str_replace( '#', '', $hex );

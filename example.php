@@ -9,24 +9,24 @@
 			font-weight:bold;
 			font-size:12px;
 			border-bottom:solid 1px rgba(0,0,0,.2);
+			color:#FFF;
+			text-shadow:0px 1px 2px rgba(0,0,0,.2);
 		}
 	</style>
 </head>
 <body>
 
 
-	<?php
+<?php
 
-require('string_to_color.php');
+	require('string_to_color.php');
+	
+	for($i=0;$i<100;$i++) {
+		$string = (array_key_exists('str', $_REQUEST)) ? $_REQUEST['str'] : "Brandon Corbin";
+		$string = $string." ".rand(0,100000);
+		echo "<div class='item' style='background-color:#".string_to_color($string).";'>".$string."</div>";
 
-echo string_to_color('Brandon Corbin');
-
-for($i=0;$i<100;$i++) {
-	$string = (array_key_exists('str', $_REQUEST)) ? $_REQUEST['str'] : "Brandon Corbin";
-	$string = $string." ".rand(0,100000);
-	echo "<div class='item' style='background-color:".string_to_color($string).";'>".$string."</div>";
-
-}
+	}
 
 ?>
 
